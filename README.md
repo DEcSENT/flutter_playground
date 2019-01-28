@@ -1,5 +1,7 @@
 # flutter_playground
 
+[![Build Status](https://travis-ci.com/DEcSENT/flutter_playground.svg?token=BxzJYzB53mJbekBNYwfZ&branch=master)](https://travis-ci.com/DEcSENT/flutter_playground)
+
 A new Flutter application.
 
 ## Getting Started
