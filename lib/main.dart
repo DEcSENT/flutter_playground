@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/common/navigation/Router.dart';
+import 'package:flutter_playground/presentation/splash/SplashScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,7 +22,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: Router.createMagicRoutes(),
+      home: SplashScreen(),
     );
   }
 }
