@@ -12,14 +12,14 @@ import 'package:location/location.dart';
 
 /// Widget which provides Location updates from platform call.
 /// Part of code was taken from https://pub.dartlang.org/packages/location#-example-tab-
-class LocationProvider extends StatefulWidget {
+class LocationProviderWidget extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return LocationProviderState();
+    return LocationProviderWidgetState();
   }
 }
 
-class LocationProviderState extends State<LocationProvider> {
+class LocationProviderWidgetState extends State<LocationProviderWidget> {
   LocationData locationData;
 
   StreamSubscription<Map<String, double>> _locationSubscription;
@@ -33,14 +33,7 @@ class LocationProviderState extends State<LocationProvider> {
     super.initState();
 
     initPlatformState();
-
-    _locationSubscription =
-        _location.onLocationChanged().listen((Map<String, double> result) {
-      setState(() {
-        locationData = LocationData.convertFromMap(result);
-        print(locationData);
-      });
-    });
+    startLocationUpdates();
   }
 
   @override
@@ -77,6 +70,16 @@ class LocationProviderState extends State<LocationProvider> {
     setState(() {
       locationData = LocationData.convertFromMap(location);
     });
+  }
+
+  void startLocationUpdates() {
+    _locationSubscription =
+        _location.onLocationChanged().listen((Map<String, double> result) {
+          setState(() {
+            locationData = LocationData.convertFromMap(result);
+            print(locationData);
+          });
+        });
   }
 
   @override
