@@ -126,8 +126,8 @@ class Main {
     seaLevel = json['sea_level'];
     grndLevel = json['grnd_level'];
     humidity = json['humidity'];
-    // Dart cant cast int into double, wtf?
-    tempKf = json['temp_kf'] * 0.0;
+    // Dart cant cast int into double, come on...
+    tempKf = json['temp_kf'] * 1.0;
   }
 
   Map<String, dynamic> toJson() {
@@ -192,9 +192,9 @@ class Wind {
   Wind({this.speed, this.deg});
 
   Wind.fromJson(Map<String, dynamic> json) {
-    // Dart cant cast int into double, wtf?
-    speed = json['speed'] * 0.0;
-    deg = json['deg'] * 0.0;
+    // Dart cant cast int into double, come on...
+    speed = json['speed'] * 1.0;
+    deg = json['deg'] * 1.0;
   }
 
   Map<String, dynamic> toJson() {
