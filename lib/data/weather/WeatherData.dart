@@ -9,7 +9,7 @@ class WeatherData {
 
   WeatherData.fromJson(Map<String, dynamic> json) {
     cod = json['cod'];
-    message = json['message'];
+    message = json['message'] * 1.0;
     cnt = json['cnt'];
     if (json['list'] != null) {
       list = new List<WeatherList>();
@@ -119,12 +119,12 @@ class Main {
       this.tempKf});
 
   Main.fromJson(Map<String, dynamic> json) {
-    temp = json['temp'];
-    tempMin = json['temp_min'];
-    tempMax = json['temp_max'];
-    pressure = json['pressure'];
-    seaLevel = json['sea_level'];
-    grndLevel = json['grnd_level'];
+    temp = json['temp'] * 1.0;
+    tempMin = json['temp_min'] * 1.0;
+    tempMax = json['temp_max'] * 1.0;
+    pressure = json['pressure'] * 1.0;
+    seaLevel = json['sea_level'] * 1.0;
+    grndLevel = json['grnd_level'] * 1.0;
     humidity = json['humidity'];
     // Dart cant cast int into double, come on...
     tempKf = json['temp_kf'] * 1.0;
@@ -211,7 +211,7 @@ class Snow {
   Snow({this.d3h});
 
   Snow.fromJson(Map<String, dynamic> json) {
-    d3h = json['3h'];
+    d3h = json['3h'] * 1.0;
   }
 
   Map<String, dynamic> toJson() {
@@ -271,8 +271,8 @@ class Coord {
   Coord({this.lat, this.lon});
 
   Coord.fromJson(Map<String, dynamic> json) {
-    lat = json['lat'];
-    lon = json['lon'];
+    lat = json['lat'] * 1.0;
+    lon = json['lon'] * 1.0;
   }
 
   Map<String, dynamic> toJson() {
